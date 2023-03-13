@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './NewExpenseForm.css';
-const NewExpenseForm=()=>{
+const NewExpenseForm=(props)=>{
     // const [title,setTitle]=useState("");
     // const [amount,setAmount]=useState(0);
     // const [date,setDate]=useState("");
@@ -22,7 +22,8 @@ const NewExpenseForm=()=>{
     }
     const submitHandler=(event)=>{
         event.preventDefault()
-console.log(userInput);
+        props.onSaveExpenseData(userInput)
+// console.log(userInput);
     }
 return <form action="#" onSubmit={submitHandler}>
     <div className='new-expense__controls'>
