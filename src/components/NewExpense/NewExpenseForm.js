@@ -24,6 +24,7 @@ const NewExpenseForm=(props)=>{
         event.preventDefault()
         props.onSaveExpenseData(userInput)
 // console.log(userInput);
+        setUserInput({title:'', amount:'', date:''});
     }
 return <form action="#" onSubmit={submitHandler}>
     <div className='new-expense__controls'>
