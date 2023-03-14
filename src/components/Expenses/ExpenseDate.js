@@ -1,8 +1,10 @@
 import './ExpenseDate.css'
+import { format } from 'date-fns';
 function ExpenseDate(props){
-    const month=props.date.toLocaleString('en-US',{month:'long'});
-    const day=props.date.toLocaleString('en-US',{day:'2-digit'});
-    const year=props.date.getFullYear();
+    // const formattedDate=format(parseIso(props.date), yyyy-MMMM-dd);
+    const month=format(new Date(props.date),'MMMM');
+    const day=format(new Date(props.date),'dd');
+    const year=format(new Date(props.date),'y');
     return (
             <div className='expense-date'>
                 <div className='expense-date__month'>{month}</div>

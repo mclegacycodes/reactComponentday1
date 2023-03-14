@@ -38,8 +38,8 @@ return <form action="#" onSubmit={submitHandler}>
 
         </div>
         <div className='new-expense__control'>
-            <label htmlFor="date">Title</label>
-            <input type="date" min="2023-01-01" max="2023-12-31" onChange={dateHandler}/>
+            <label htmlFor="date">Date</label>
+            <input type="date" min="2023-01-01" max="2024-12-31" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" onChange={dateHandler}/>
 
         </div>
     </div>
