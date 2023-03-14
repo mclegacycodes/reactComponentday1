@@ -16,14 +16,15 @@ function Expenses(props){
 
   }
   const filterYear=(receivedYear)=>{ return format(receivedYear.date,'y') === year};
+  const filteredList=props.expense.filter(filterYear );
   return (
 <Card className='expenses'>
 <ExpensesFilter onYearUpdate={yearUpdateHandler} selectedYear={year}/>
 {
 // props.expense.map((item)=>{ return <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date}></ExpenseItem>})
  
-
-props.expense.filter(filterYear ).map((item)=>{ return <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date}></ExpenseItem>})
+filteredList.length ===0? <p>No List found</p> :
+filteredList.map((item)=>{ return <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date}></ExpenseItem>})
 
 
 }
